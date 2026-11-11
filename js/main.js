@@ -235,3 +235,47 @@ if (filtersForm) {
     setTimeout(applyFilters, 0);
   });
 }
+
+// ===============================
+// 4. Формы на страницах заявки и контактов
+// ===============================
+
+// У таких форм есть атрибут data-validate, а в data-success — id сообщения об успехе
+document.querySelectorAll('form[data-validate]').forEach((form) => {
+  const successMessage = document.getElementById(form.dataset.success);
+
+  form.addEventListener('submit', (event) => {
+    // backend не подключён — отправку только имитируем
+    event.preventDefault();
+
+    const fields = Array.from(form.elements).filter((element) => element.willValidate);
+    fields.forEach((field) => field.removeAttribute('aria-invalid'));
+
+    const invalidFields = fields.filter((field) => !field.checkValidity());
+
+    if (invalidFields.length > 0) {
+      // aria-invalid — красная рамка в CSS и сигнал «ошибка» для экранного диктора
+      invalidFields.forEach((field) => field.setAttribute('aria-invalid', 'true'));
+      successMessage.hidden = true;
+
+      // Фокус на первое ошибочное поле и стандартная подсказка браузера
+      invalidFields[0].focus();
+      invalidFields[0].reportValidity();
+      return;
+    }
+
+    successMessage.hidden = false;
+    form.reset();
+  });
+
+  // Как только поле исправлено, снимаем отметку об ошибке
+  form.addEventListener('input', (event) => {
+    if (event.target.checkValidity()) {
+      event.target.removeAttribute('aria-invalid');
+    }
+  });
+
+  form.addEventListener('reset', () => {
+    form.querySelectorAll('[aria-invalid]').forEach((field) => field.removeAttribute('aria-invalid'));
+  });
+});

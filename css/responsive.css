@@ -53,6 +53,51 @@ video {
   .filters-form__actions {
     grid-column: 1 / -1;
   }
+
+  /* Таблицы — снова обычные таблицы. Если таблица шире экрана,
+     прокручивается только .table-wrapper, а не вся страница */
+  .product-table {
+    display: table;
+    min-width: 640px;
+  }
+
+  .product-table caption {
+    display: table-caption;
+  }
+
+  .product-table thead {
+    display: table-header-group;
+  }
+
+  .product-table tbody {
+    display: table-row-group;
+  }
+
+  .product-table tr,
+  .product-table--specs tr {
+    display: table-row;
+    margin: 0;
+    border: none;
+  }
+
+  .product-table th,
+  .product-table td,
+  .product-table--compare td {
+    display: table-cell;
+    border: 1px solid var(--color-border);
+  }
+
+  .product-table--specs th {
+    color: var(--color-text);
+  }
+
+  .product-table--compare th {
+    background-color: transparent;
+  }
+
+  .product-table--compare td::before {
+    content: none;
+  }
 }
 
 
@@ -88,6 +133,33 @@ video {
   /* Страница товара: фото и описание рядом */
   .product-detail {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Формы на страницах заявки и контактов — две колонки,
+     длинные поля (тема, комментарий, согласие, кнопки) — на всю ширину */
+  .order-form--page {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: var(--space-lg);
+    max-width: 760px;
+  }
+
+  .order-form__field--full {
+    grid-column: 1 / -1;
+  }
+
+  /* Контакты — три карточки в ряд */
+  .contacts-list {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  /* Подвал — в одну строку */
+  .site-footer__inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-sm) var(--space-lg);
   }
 
   .to-top {
