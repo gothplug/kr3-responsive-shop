@@ -51,12 +51,16 @@ body {
   line-height: 1.5;
   color: var(--color-text);
   background-color: var(--color-bg);
+  /* Длинные слова и ссылки переносятся, а не растягивают страницу вбок */
+  overflow-wrap: break-word;
 }
 
+/* Mobile First: базовые отступы рассчитаны на телефон,
+   на широких экранах их увеличивает responsive.css */
 header,
 main,
 footer {
-  padding: var(--space-lg);
+  padding: var(--space-md);
 }
 
 header {
@@ -118,7 +122,9 @@ a:focus-visible {
 
 .button {
   display: inline-block;
-  padding: var(--space-sm) var(--space-md);
+  /* Минимальная высота 44px — удобная цель для пальца */
+  min-height: 44px;
+  padding: 10px var(--space-md);
   border: none;
   border-radius: var(--radius-sm);
   font: inherit;
@@ -163,8 +169,8 @@ a:focus-visible {
 
 .to-top {
   position: fixed;
-  right: var(--space-lg);
-  bottom: var(--space-lg);
+  right: var(--space-md);
+  bottom: var(--space-md);
   z-index: 10;
   padding: var(--space-sm) var(--space-md);
   color: var(--color-white);
@@ -187,35 +193,120 @@ a:focus-visible {
    4. Хедер и навигация
    =============================== */
 
+/* Шапка — Flexbox: логотип слева, кнопка меню справа,
+   навигация переносится на отдельную строку на всю ширину */
 .site-header {
   max-width: var(--container-width);
   margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm) var(--space-md);
 }
 
 .site-logo {
+  font-size: 20px;
   font-weight: bold;
   text-decoration: none;
   color: var(--color-text);
 }
 
+/* Кнопка мобильного меню («бургер») */
+.menu-toggle {
+  /* Без JavaScript меню не сворачивается, поэтому и кнопка не нужна */
+  display: none;
+  align-items: center;
+  gap: var(--space-sm);
+  min-height: 44px;
+  padding: var(--space-sm) var(--space-md);
+  font: inherit;
+  color: var(--color-primary);
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+
+.js .menu-toggle {
+  display: inline-flex;
+}
+
+.menu-toggle:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+/* Три полоски из одного элемента и двух псевдоэлементов */
+.menu-toggle__icon,
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  display: block;
+  width: 18px;
+  height: 2px;
+  background-color: currentColor;
+  border-radius: 1px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.menu-toggle__icon {
+  position: relative;
+}
+
+.menu-toggle__icon::before,
+.menu-toggle__icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.menu-toggle__icon::before {
+  top: -6px;
+}
+
+.menu-toggle__icon::after {
+  top: 6px;
+}
+
+/* Открытое меню: полоски превращаются в крестик */
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon {
+  background-color: transparent;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon::before {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__icon::after {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Навигация на телефоне — вертикальный список на всю ширину */
+.site-nav {
+  flex-basis: 100%;
+}
+
+.js .site-nav {
+  display: none;
+}
+
+.js .site-nav.site-nav--open {
+  display: block;
+}
+
 .site-nav__list {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: var(--space-md);
+  flex-direction: column;
+  gap: var(--space-xs);
   padding: 0;
-  margin: var(--space-md) 0 0;
+  margin: var(--space-sm) 0 0;
   list-style: none;
 }
 
-.site-nav__item {
-  margin-bottom: var(--space-sm);
-}
-
 .site-nav__link {
-  display: inline-block;
-  padding: var(--space-sm) var(--space-md);
+  display: block;
+  min-height: 44px;
+  padding: 10px var(--space-md);
   color: var(--color-primary);
   text-decoration: none;
   border-radius: var(--radius-sm);
@@ -239,7 +330,7 @@ a:focus-visible {
 .hero {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
-  padding: var(--space-xl) var(--space-lg);
+  padding: var(--space-lg) var(--space-md);
   background-color: var(--color-surface-accent);
   border-radius: var(--radius-lg);
 }
@@ -357,19 +448,20 @@ a:focus-visible {
    6. Каталог: раскладка, фильтры, сетка товаров
    =============================== */
 
+/* Каталог на телефоне: фильтры над списком, одна колонка.
+   Колонку фильтров слева добавляет responsive.css с 1024px */
 .catalog-layout {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   display: grid;
-  grid-template-columns: 260px 1fr;
-  grid-template-areas: "filters products";
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-areas:
+    "filters"
+    "products";
   gap: var(--space-lg);
 }
 
 .catalog-filters {
-  position: sticky;
-  top: var(--space-md);
-  z-index: 1;
   grid-area: filters;
   padding: var(--space-md);
   border: 1px solid var(--color-border);
@@ -428,6 +520,7 @@ a:focus-visible {
 
 .filters-form__input {
   width: 100%;
+  min-height: 44px;
   padding: 8px 10px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -443,9 +536,11 @@ a:focus-visible {
   outline-offset: 2px;
 }
 
+/* Сетка карточек — CSS Grid. На телефоне одна колонка,
+   2 и 3 колонки включаются в responsive.css */
 .products-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-lg);
 }
 
@@ -495,7 +590,7 @@ a:focus-visible {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-lg);
   align-items: start;
 }
@@ -698,6 +793,7 @@ a:focus-visible {
 
 .order-form__input {
   width: 100%;
+  min-height: 44px;
   padding: 10px 12px;
   border: 1px solid var(--color-border);
   border-radius: var(--radius-sm);
@@ -716,7 +812,9 @@ a:focus-visible {
 }
 
 .order-form__checkbox {
-  width: auto;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .order-form__hint {
@@ -731,6 +829,7 @@ a:focus-visible {
 
 .order-form__actions {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-md);
   margin-top: var(--space-lg);
 }
@@ -750,7 +849,7 @@ a:focus-visible {
 
 .reviews-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: minmax(0, 1fr);
   gap: var(--space-lg);
 }
 
@@ -831,54 +930,4 @@ a:focus-visible {
   color: var(--color-muted);
 }
 
-/* ===============================
-   10. Адаптив
-   =============================== */
-
-@media (max-width: 900px) {
-  .products-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .reviews-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 720px) {
-  .catalog-layout {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "filters"
-      "products";
-  }
-
-  .catalog-filters {
-    position: static;
-  }
-
-  .product-detail {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 520px) {
-  .products-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .reviews-grid {
-    grid-template-columns: 1fr;
-  }
-
-  header,
-  main,
-  footer {
-    padding: var(--space-md);
-  }
-
-  .to-top {
-    right: var(--space-md);
-    bottom: var(--space-md);
-  }
-}
+/* Адаптивные правила (медиазапросы) вынесены в отдельный файл css/responsive.css */
