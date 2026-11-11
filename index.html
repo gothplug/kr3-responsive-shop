@@ -319,12 +319,12 @@
           type="tel"
           inputmode="tel"
           autocomplete="tel"
-          placeholder="+7 (900) 000-00-00"
-          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+          placeholder="+7 900 123-45-67"
+          pattern="(\+7|8)[\s\(\-]*\d{3}[\s\)\-]*\d{3}[\s\-]*\d{2}[\s\-]*\d{2}"
           aria-describedby="order-phone-hint"
           required
         >
-        <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+        <small class="order-form__hint" id="order-phone-hint">Например: +7 900 123-45-67 или 89001234567</small>
       </div>
 
       <div class="order-form__field">
