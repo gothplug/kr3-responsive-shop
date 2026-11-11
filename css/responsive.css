@@ -43,6 +43,16 @@ video {
   .reviews-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  /* Открытый фильтр на планшете: «Категория» и «Цена» рядом,
+     кнопки на всю ширину под ними */
+  .filters-form {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .filters-form__actions {
+    grid-column: 1 / -1;
+  }
 }
 
 
@@ -121,6 +131,20 @@ video {
     position: sticky;
     top: var(--space-md);
     z-index: 1;
+  }
+
+  /* В боковой колонке фильтры всегда открыты, поля — в одну колонку */
+  .catalog-filters__toggle,
+  .js .catalog-filters__toggle {
+    display: none;
+  }
+
+  .js .catalog-filters__panel {
+    display: block;
+  }
+
+  .filters-form {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .products-grid,

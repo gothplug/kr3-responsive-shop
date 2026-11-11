@@ -41,6 +41,11 @@
   box-sizing: border-box;
 }
 
+/* Атрибут hidden всегда скрывает элемент, даже если у класса задан display: flex */
+[hidden] {
+  display: none !important;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -499,6 +504,40 @@ a:focus-visible {
   margin-top: 0;
 }
 
+/* Заголовок фильтров и кнопка «Показать фильтры» в одной строке */
+.catalog-filters__header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-sm);
+}
+
+.catalog-filters__title {
+  margin: 0;
+}
+
+/* На телефоне при работающем JS фильтры свёрнуты до нажатия кнопки */
+.catalog-filters__toggle {
+  display: none;
+}
+
+.js .catalog-filters__toggle {
+  display: inline-block;
+}
+
+.catalog-filters__panel {
+  margin-top: var(--space-md);
+}
+
+.js .catalog-filters__panel {
+  display: none;
+}
+
+.js .catalog-filters--open .catalog-filters__panel {
+  display: block;
+}
+
 .catalog-products {
   grid-area: products;
   min-width: 0;
@@ -527,11 +566,14 @@ a:focus-visible {
   margin-bottom: var(--space-sm);
 }
 
-/* Категории — чекбокс и подпись в одну строку */
+/* Категории — чекбокс и подпись в одну строку, каждый пункт на своей строке
+   высотой не меньше 44px, чтобы по нему было легко попасть пальцем */
 .filters-form__label--choice {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: var(--space-sm);
+  min-height: 44px;
+  margin-bottom: 0;
   cursor: pointer;
 }
 
@@ -559,6 +601,30 @@ a:focus-visible {
 .filters-form__input:focus-visible {
   outline: 2px solid var(--color-primary);
   outline-offset: 2px;
+}
+
+.filters-form__checkbox {
+  width: 20px;
+  height: 20px;
+}
+
+.filters-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* Счётчик найденных товаров и пустой результат */
+.catalog-products__status {
+  margin: 0 0 var(--space-md);
+  color: var(--color-muted);
+}
+
+.catalog-products__empty {
+  margin: var(--space-md) 0 0;
+  padding: var(--space-md);
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-surface);
 }
 
 /* Сетка карточек — CSS Grid. На телефоне одна колонка,
