@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Учебный интернет-магазин">
+  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
+  <meta property="og:image" content="https://gothplug.github.io/kr1_front/images/preview.jpg">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Главная страница учебного интернет-магазина: преимущества проекта и популярные товары.">
+  <title>Учебный интернет-магазин</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/main.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="site-header">
+      <a class="site-logo" href="index.html">ShopProject</a>
+
+      <nav class="site-nav" aria-label="Основная навигация">
+        <ul class="site-nav__list">
+          <li class="site-nav__item"><a class="site-nav__link site-nav__link--active" href="index.html" aria-current="page">Главная</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="catalog.html">Каталог</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="category.html">Новинки</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="product.html">Товар</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="order.html">Заявка</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="contacts.html">Контакты</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#advantages">Преимущества</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#popular">Популярные товары</a></li>
+          <li class="site-nav__item"><a class="site-nav__link" href="index.html#contacts">Обратная связь</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h1>Учебный интернет-магазин</h1>
+      <p>
+        Это стартовая страница учебного frontend-проекта.
+        В дальнейшем на её основе будет разработан многостраничный сайт
+        интернет-магазина или каталога услуг.
+      </p>
+      <a class="button button--primary" href="#popular">Перейти к товарам</a>
+    </section>
+
+    <section class="section" id="advantages">
+      <h2>Преимущества проекта</h2>
+
+      <ul class="advantages-list">
+        <li>понятная HTML-структура;</li>
+        <li>семантические блоки страницы;</li>
+        <li>подключение внешнего CSS-файла;</li>
+        <li>подготовка к разработке многостраничного сайта.</li>
+      </ul>
+    </section>
+
+    <section class="section" id="popular">
+      <h2>Популярные товары</h2>
+
+      <div class="products-grid">
+        <article class="product-card product-card--featured">
+          <img class="product-card__image" src="images/product-1.svg" alt="Товар 1" width="600" height="400" loading="lazy">
+          <span class="product-card__badge product-card__badge--hit">Хит</span>
+          <h3 class="product-card__title">Товар 1</h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
+          <p class="product-card__price">1000 руб.</p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Товар 1">
+              Заказать
+            </button>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="product-card">
+          <img class="product-card__image" src="images/product-2.svg" alt="Товар 2" width="600" height="400" loading="lazy">
+          <span class="product-card__badge product-card__badge--new">Новинка</span>
+          <h3 class="product-card__title">Товар 2</h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
+          <p class="product-card__price">1500 руб.</p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Товар 2">
+              Заказать
+            </button>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+          </div>
+        </article>
+
+        <article class="product-card product-card--discount">
+          <img class="product-card__image" src="images/product-3.svg" alt="Товар 3" width="600" height="400" loading="lazy">
+          <span class="product-card__badge">Скидка</span>
+          <h3 class="product-card__title">Товар 3</h3>
+          <p class="product-card__description">Краткое описание учебного товара.</p>
+          <p class="product-card__price">2000 руб.</p>
+          <div class="product-card__actions">
+            <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Товар 3">
+              Заказать
+            </button>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="reviews">
+      <h2>Отзывы покупателей</h2>
+
+      <div class="reviews-grid">
+        <article class="review-card">
+          <blockquote class="review-card__text">
+            <p>Оформление заявки заняло пару минут, всё понятно без инструкций.</p>
+          </blockquote>
+          <p class="review-card__author">
+            <cite class="review-card__name">Ирина</cite>,
+            <span class="review-card__role">покупатель</span>
+          </p>
+        </article>
+
+        <article class="review-card">
+          <blockquote class="review-card__text">
+            <p>Фильтры в каталоге помогают быстро найти нужный товар.</p>
+          </blockquote>
+          <p class="review-card__author">
+            <cite class="review-card__name">Алексей</cite>,
+            <span class="review-card__role">преподаватель</span>
+          </p>
+        </article>
+
+        <article class="review-card">
+          <blockquote class="review-card__text">
+            <p>Удобно, что таблица характеристик находится прямо на странице товара.</p>
+          </blockquote>
+          <p class="review-card__author">
+            <cite class="review-card__name">Мария</cite>,
+            <span class="review-card__role">инженер</span>
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <h2>Часто задаваемые вопросы</h2>
+
+      <div class="faq">
+        <details class="faq__item">
+          <summary class="faq__question">Как оформить заявку на товар?</summary>
+          <p class="faq__answer">
+            Откройте карточку товара и нажмите «Оформить заявку» либо заполните форму
+            на странице «Заявка».
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Нужна ли регистрация для оформления заявки?</summary>
+          <p class="faq__answer">
+            Нет. Для отправки заявки достаточно указать имя, e-mail и телефон.
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Как рассчитывается стоимость доставки?</summary>
+          <p class="faq__answer">
+            Стоимость доставки зависит от региона. Точная сумма указывается
+            в ответе на заявку.
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Можно ли изменить состав заявки после отправки?</summary>
+          <p class="faq__answer">
+            Да, для этого свяжитесь с нами по телефону или через форму обратной связи
+            на странице «Контакты».
+          </p>
+        </details>
+
+        <details class="faq__item">
+          <summary class="faq__question">Где посмотреть характеристики товара?</summary>
+          <p class="faq__answer">
+            Характеристики приведены в таблице на странице товара. Перейти к ней можно
+            из каталога по ссылке «Подробнее».
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <aside class="aside-info">
+      <h2>Информация для студентов</h2>
+      <p>
+        На следующих практических занятиях этот проект будет расширяться:
+        появятся формы, модальное окно, дополнительные страницы, Flex/Grid,
+        БЭМ-структура и адаптивная версия сайта.
+      </p>
+    </aside>
+  </main>
+
+  <footer id="contacts">
+    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
+    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  </footer>
+
+  <dialog
+    class="order-dialog"
+    id="order-dialog"
+    aria-labelledby="order-dialog-title"
+    aria-describedby="order-dialog-hint"
+  >
+    <button
+      class="order-dialog__close"
+      type="button"
+      id="close-order-dialog"
+      aria-label="Закрыть окно"
+    >&times;</button>
+
+    <h2 class="order-dialog__title" id="order-dialog-title">Оформление заявки</h2>
+
+    <p class="order-dialog__hint" id="order-dialog-hint" aria-live="polite">
+      Выбранный товар: <span id="selected-product-name">не выбран</span>
+    </p>
+
+    <form class="order-form" id="order-form" action="#" method="post" novalidate>
+      <input id="selected-product" name="selected-product" type="hidden">
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-name">Имя</label>
+        <input
+          class="order-form__input"
+          id="order-name"
+          name="name"
+          type="text"
+          placeholder="Введите ваше имя"
+          minlength="2"
+          autocomplete="given-name"
+          required
+        >
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-email">E-mail</label>
+        <input
+          class="order-form__input"
+          id="order-email"
+          name="email"
+          type="email"
+          placeholder="example@mail.ru"
+          autocomplete="email"
+          required
+        >
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-phone">Телефон</label>
+        <input
+          class="order-form__input"
+          id="order-phone"
+          name="phone"
+          type="tel"
+          inputmode="tel"
+          autocomplete="tel"
+          placeholder="+7 (900) 000-00-00"
+          pattern="^\+7 \(\d{3}\) \d{3}-\d{2}-\d{2}$"
+          aria-describedby="order-phone-hint"
+          required
+        >
+        <small class="order-form__hint" id="order-phone-hint">Формат: +7 (900) 000-00-00</small>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-date">Дата связи</label>
+        <input
+          class="order-form__input"
+          id="order-date"
+          name="date"
+          type="date"
+        >
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-topic">Тема заявки</label>
+        <select
+          class="order-form__input"
+          id="order-topic"
+          name="topic"
+          required
+        >
+          <option value="">Выберите тему</option>
+          <option value="product">Заказ товара</option>
+          <option value="consultation">Консультация</option>
+          <option value="delivery">Доставка</option>
+        </select>
+      </div>
+
+      <div class="order-form__field">
+        <label class="order-form__label" for="order-comment">Комментарий</label>
+        <textarea
+          class="order-form__input"
+          id="order-comment"
+          name="comment"
+          rows="4"
+          placeholder="Укажите дополнительную информацию"
+        ></textarea>
+      </div>
+
+      <div class="order-form__field order-form__field--checkbox">
+        <label class="order-form__label order-form__label--checkbox">
+          <input
+            class="order-form__checkbox"
+            id="order-agreement"
+            name="agreement"
+            type="checkbox"
+            required
+          >
+          Я согласен на обработку данных
+        </label>
+      </div>
+
+      <div class="order-form__actions">
+        <button class="button button--primary" type="submit">
+          Отправить заявку
+        </button>
+      </div>
+    </form>
+  </dialog>
+
+  <p class="success-message" id="success-message" role="status" hidden>
+    Форма успешно отправлена!
+  </p>
+
+  <a class="to-top" href="#" aria-label="Наверх">Наверх</a>
+</body>
+</html>
