@@ -156,3 +156,82 @@ if (orderDialog) {
     orderDialog.close();
   });
 }
+
+// ===============================
+// 3. Фильтр каталога
+// ===============================
+
+const filtersBlock = document.querySelector('.catalog-filters');
+const filtersToggle = document.querySelector('.catalog-filters__toggle');
+const filtersForm = document.getElementById('filters-form');
+
+// 3.1. Кнопка «Показать фильтры» (видна на экранах уже 1024px)
+function setFiltersOpen(isOpen) {
+  filtersToggle.setAttribute('aria-expanded', String(isOpen));
+  filtersToggle.textContent = isOpen ? 'Скрыть фильтры' : 'Показать фильтры';
+  filtersBlock.classList.toggle('catalog-filters--open', isOpen);
+}
+
+if (filtersBlock && filtersToggle) {
+  filtersToggle.addEventListener('click', () => {
+    const isOpen = filtersToggle.getAttribute('aria-expanded') === 'true';
+    setFiltersOpen(!isOpen);
+  });
+}
+
+// 3.2. Отбор карточек по категории и цене
+if (filtersForm) {
+  const cards = Array.from(document.querySelectorAll('.catalog-products .product-card'));
+  const status = document.getElementById('catalog-status');
+  const emptyMessage = document.getElementById('catalog-empty');
+
+  function applyFilters() {
+    const formData = new FormData(filtersForm);
+
+    // Отмеченные категории; «Все товары» или пустой выбор — без ограничения
+    const categories = formData.getAll('category').filter((value) => value !== 'all');
+    const priceFrom = Number(formData.get('price-from')) || 0;
+    const priceTo = Number(formData.get('price-to')) || Infinity;
+
+    let visibleCount = 0;
+
+    cards.forEach((card) => {
+      const price = Number(card.dataset.price);
+      const tags = card.dataset.tags.split(' ');
+
+      const matchesCategory = categories.length === 0 || categories.some((category) => tags.includes(category));
+      const matchesPrice = price >= priceFrom && price <= priceTo;
+      const isVisible = matchesCategory && matchesPrice;
+
+      card.hidden = !isVisible;
+      if (isVisible) {
+        visibleCount += 1;
+      }
+    });
+
+    // role="status" — экранный диктор зачитает новое число без перевода фокуса
+    status.textContent = `Показано товаров: ${visibleCount} из ${cards.length}`;
+    emptyMessage.hidden = visibleCount > 0;
+  }
+
+  // Список обновляется сразу при изменении любого поля
+  filtersForm.addEventListener('input', applyFilters);
+
+  // «Применить»: на телефоне закрываем панель и переходим к результатам
+  filtersForm.addEventListener('submit', (event) => {
+    event.preventDefault();
+    applyFilters();
+
+    if (filtersToggle && !desktopQuery.matches) {
+      setFiltersOpen(false);
+      status.setAttribute('tabindex', '-1');
+      status.focus();
+    }
+  });
+
+  // «Сбросить»: значения полей очищаются уже после события reset,
+  // поэтому пересчитываем список следующей задачей
+  filtersForm.addEventListener('reset', () => {
+    setTimeout(applyFilters, 0);
+  });
+}
