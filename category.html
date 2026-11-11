@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://gothplug.github.io/kr1_front/images/preview.jpg">
+  <meta property="og:description" content="Адаптивный учебный интернет-магазин: Mobile First, responsive images, доступность.">
+  <meta property="og:image" content="https://gothplug.github.io/kr3-responsive-shop/images/og-preview.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Категория «Новинки» учебного интернет-магазина.">
   <title>Новинки — Учебный интернет-магазин</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header id="top">
     <div class="site-header">
       <a class="site-logo" href="index.html">ShopProject</a>
 
@@ -42,11 +45,11 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
-      <span class="breadcrumbs__current">Новинки</span>
+      <span class="breadcrumbs__current" aria-current="page">Новинки</span>
     </nav>
 
     <section class="section">
@@ -85,7 +88,7 @@
           <h3 class="product-card__title">Умные часы Pulse S</h3>
           <p class="product-card__description">AMOLED-экран, пульсометр, GPS и уведомления со смартфона.</p>
           <p class="product-card__price">8 990 руб.</p>
-          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Умные часы Pulse S»</span></a>
         </article>
 
         <article class="product-card">
@@ -101,7 +104,7 @@
           <h3 class="product-card__title">Механическая клавиатура KeyPro</h3>
           <p class="product-card__description">Компактная раскладка 75 % и подсветка клавиш.</p>
           <p class="product-card__price">6 490 руб.</p>
-          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Механическая клавиатура KeyPro»</span></a>
         </article>
 
         <article class="product-card">
@@ -117,7 +120,7 @@
           <h3 class="product-card__title">USB-C хаб 7 в 1</h3>
           <p class="product-card__description">HDMI 4K, три USB-A и кардридер.</p>
           <p class="product-card__price">2 990 руб.</p>
-          <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+          <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «USB-C хаб 7 в 1»</span></a>
         </article>
       </div>
     </section>
@@ -139,6 +142,6 @@
     </div>
   </footer>
 
-  <a class="to-top" href="#" aria-label="Наверх">Наверх</a>
+  <a class="to-top" href="#top">Наверх</a>
 </body>
 </html>

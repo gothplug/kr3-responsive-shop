@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://gothplug.github.io/kr1_front/images/preview.jpg">
+  <meta property="og:description" content="Адаптивный учебный интернет-магазин: Mobile First, responsive images, доступность.">
+  <meta property="og:image" content="https://gothplug.github.io/kr3-responsive-shop/images/og-preview.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Главная страница учебного интернет-магазина: преимущества проекта и популярные товары.">
   <title>Учебный интернет-магазин</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header id="top">
     <div class="site-header">
       <a class="site-logo" href="index.html">ShopProject</a>
 
@@ -42,7 +45,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <section class="hero">
       <div class="hero__content">
         <h1>Учебный интернет-магазин</h1>
@@ -111,7 +114,7 @@
             <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Беспроводные наушники AirBeat">
               Заказать
             </button>
-            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Беспроводные наушники AirBeat»</span></a>
           </div>
         </article>
 
@@ -132,7 +135,7 @@
             <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Умные часы Pulse S">
               Заказать
             </button>
-            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Умные часы Pulse S»</span></a>
           </div>
         </article>
 
@@ -153,7 +156,7 @@
             <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Портативная колонка Boom Mini">
               Заказать
             </button>
-            <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--secondary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Портативная колонка Boom Mini»</span></a>
           </div>
         </article>
       </div>
@@ -385,6 +388,6 @@
     Форма успешно отправлена!
   </p>
 
-  <a class="to-top" href="#" aria-label="Наверх">Наверх</a>
+  <a class="to-top" href="#top">Наверх</a>
 </body>
 </html>

@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://gothplug.github.io/kr1_front/images/preview.jpg">
+  <meta property="og:description" content="Адаптивный учебный интернет-магазин: Mobile First, responsive images, доступность.">
+  <meta property="og:image" content="https://gothplug.github.io/kr3-responsive-shop/images/og-preview.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Карточка товара учебного интернет-магазина: изображение, описание, характеристики и цена.">
   <title>Беспроводные наушники AirBeat — Учебный интернет-магазин</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header id="top">
     <div class="site-header">
       <a class="site-logo" href="index.html">ShopProject</a>
 
@@ -42,11 +45,11 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
-      <span class="breadcrumbs__current">Беспроводные наушники AirBeat</span>
+      <span class="breadcrumbs__current" aria-current="page">Беспроводные наушники AirBeat</span>
     </nav>
 
     <article class="product-detail">
@@ -202,6 +205,6 @@
     </div>
   </footer>
 
-  <a class="to-top" href="#" aria-label="Наверх">Наверх</a>
+  <a class="to-top" href="#top">Наверх</a>
 </body>
 </html>
