@@ -44,13 +44,39 @@
 
   <main>
     <section class="hero">
-      <h1>Учебный интернет-магазин</h1>
-      <p>
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем на её основе будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг.
-      </p>
-      <a class="button button--primary" href="#popular">Перейти к товарам</a>
+      <div class="hero__content">
+        <h1>Учебный интернет-магазин</h1>
+        <p>
+          Гаджеты для учёбы, работы и отдыха: наушники, умные часы, клавиатуры
+          и аксессуары. Сайт одинаково удобен на телефоне, планшете и компьютере.
+        </p>
+        <a class="button button--primary" href="#popular">Перейти к товарам</a>
+      </div>
+
+      <!-- Art direction: с 768px — широкий кадр с несколькими товарами,
+           на телефоне — крупный кадр с одним товаром -->
+      <picture class="hero__media">
+        <source media="(min-width: 768px)" type="image/avif"
+                srcset="images/hero/hero-desktop-960.avif 960w, images/hero/hero-desktop-1440.avif 1440w"
+                sizes="(min-width: 1440px) 610px, 50vw" width="1200" height="800">
+        <source media="(min-width: 768px)" type="image/webp"
+                srcset="images/hero/hero-desktop-960.webp 960w, images/hero/hero-desktop-1440.webp 1440w"
+                sizes="(min-width: 1440px) 610px, 50vw" width="1200" height="800">
+        <source media="(min-width: 768px)"
+                srcset="images/hero/hero-desktop-960.jpg 960w, images/hero/hero-desktop-1440.jpg 1440w"
+                sizes="(min-width: 1440px) 610px, 50vw" width="1200" height="800">
+        <source type="image/avif"
+                srcset="images/hero/hero-mobile-480.avif 480w, images/hero/hero-mobile-800.avif 800w"
+                sizes="100vw">
+        <source type="image/webp"
+                srcset="images/hero/hero-mobile-480.webp 480w, images/hero/hero-mobile-800.webp 800w"
+                sizes="100vw">
+        <img class="hero__image" src="images/hero/hero-mobile-800.jpg"
+             srcset="images/hero/hero-mobile-480.jpg 480w, images/hero/hero-mobile-800.jpg 800w"
+             sizes="100vw"
+             alt="Товары из каталога: наушники, умные часы, колонка и клавиатура"
+             width="800" height="600" fetchpriority="high">
+      </picture>
     </section>
 
     <section class="section" id="advantages">
@@ -69,13 +95,20 @@
 
       <div class="products-grid">
         <article class="product-card product-card--featured">
-          <img class="product-card__image" src="images/product-1.svg" alt="Товар 1" width="600" height="400" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="images/products/product-1-400.avif 400w, images/products/product-1-800.avif 800w, images/products/product-1-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+            <source type="image/webp" srcset="images/products/product-1-400.webp 400w, images/products/product-1-800.webp 800w, images/products/product-1-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+            <img class="product-card__image" src="images/products/product-1-800.jpg"
+                 srcset="images/products/product-1-400.jpg 400w, images/products/product-1-800.jpg 800w, images/products/product-1-1200.jpg 1200w"
+                 sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                 alt="Синие полноразмерные наушники AirBeat" width="800" height="533" loading="lazy">
+          </picture>
           <span class="product-card__badge product-card__badge--hit">Хит</span>
-          <h3 class="product-card__title">Товар 1</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">1000 руб.</p>
+          <h3 class="product-card__title">Беспроводные наушники AirBeat</h3>
+          <p class="product-card__description">Полноразмерные наушники с шумоподавлением и 40 часами работы.</p>
+          <p class="product-card__price">5 990 руб.</p>
           <div class="product-card__actions">
-            <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Товар 1">
+            <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Беспроводные наушники AirBeat">
               Заказать
             </button>
             <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
@@ -83,13 +116,20 @@
         </article>
 
         <article class="product-card">
-          <img class="product-card__image" src="images/product-2.svg" alt="Товар 2" width="600" height="400" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="images/products/product-2-400.avif 400w, images/products/product-2-800.avif 800w, images/products/product-2-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+            <source type="image/webp" srcset="images/products/product-2-400.webp 400w, images/products/product-2-800.webp 800w, images/products/product-2-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+            <img class="product-card__image" src="images/products/product-2-800.jpg"
+                 srcset="images/products/product-2-400.jpg 400w, images/products/product-2-800.jpg 800w, images/products/product-2-1200.jpg 1200w"
+                 sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                 alt="Умные часы Pulse S с зелёным экраном" width="800" height="533" loading="lazy">
+          </picture>
           <span class="product-card__badge product-card__badge--new">Новинка</span>
-          <h3 class="product-card__title">Товар 2</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">1500 руб.</p>
+          <h3 class="product-card__title">Умные часы Pulse S</h3>
+          <p class="product-card__description">AMOLED-экран, пульсометр, GPS и уведомления со смартфона.</p>
+          <p class="product-card__price">8 990 руб.</p>
           <div class="product-card__actions">
-            <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Товар 2">
+            <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Умные часы Pulse S">
               Заказать
             </button>
             <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>
@@ -97,13 +137,20 @@
         </article>
 
         <article class="product-card product-card--discount">
-          <img class="product-card__image" src="images/product-3.svg" alt="Товар 3" width="600" height="400" loading="lazy">
+          <picture>
+            <source type="image/avif" srcset="images/products/product-3-400.avif 400w, images/products/product-3-800.avif 800w, images/products/product-3-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+            <source type="image/webp" srcset="images/products/product-3-400.webp 400w, images/products/product-3-800.webp 800w, images/products/product-3-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+            <img class="product-card__image" src="images/products/product-3-800.jpg"
+                 srcset="images/products/product-3-400.jpg 400w, images/products/product-3-800.jpg 800w, images/products/product-3-1200.jpg 1200w"
+                 sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                 alt="Оранжевая портативная колонка Boom Mini" width="800" height="533" loading="lazy">
+          </picture>
           <span class="product-card__badge">Скидка</span>
-          <h3 class="product-card__title">Товар 3</h3>
-          <p class="product-card__description">Краткое описание учебного товара.</p>
-          <p class="product-card__price">2000 руб.</p>
+          <h3 class="product-card__title">Портативная колонка Boom Mini</h3>
+          <p class="product-card__description">Компактная колонка с защитой от воды и мощным басом.</p>
+          <p class="product-card__price">3 490 руб.</p>
           <div class="product-card__actions">
-            <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Товар 3">
+            <button class="button button--primary product-card__button product-card__button--order" type="button" data-product="Портативная колонка Boom Mini">
               Заказать
             </button>
             <a class="button button--secondary product-card__button" href="product.html">Подробнее</a>

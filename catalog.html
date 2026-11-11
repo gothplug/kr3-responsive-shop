@@ -111,79 +111,142 @@
 
         <div class="products-grid">
           <article class="product-card product-card--featured">
-            <img class="product-card__image" src="images/product-1.svg" alt="Товар 1" width="600" height="400" loading="lazy">
+            <picture>
+              <source type="image/avif" srcset="images/products/product-1-400.avif 400w, images/products/product-1-800.avif 800w, images/products/product-1-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <source type="image/webp" srcset="images/products/product-1-400.webp 400w, images/products/product-1-800.webp 800w, images/products/product-1-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <img class="product-card__image" src="images/products/product-1-800.jpg"
+                   srcset="images/products/product-1-400.jpg 400w, images/products/product-1-800.jpg 800w, images/products/product-1-1200.jpg 1200w"
+                   sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                   alt="Синие полноразмерные наушники AirBeat" width="800" height="533" loading="lazy">
+            </picture>
             <span class="product-card__badge product-card__badge--hit">Хит</span>
-            <h3 class="product-card__title">Товар 1</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">1000 руб.</p>
+            <h3 class="product-card__title">Беспроводные наушники AirBeat</h3>
+            <p class="product-card__description">Полноразмерные наушники с шумоподавлением и 40 часами работы.</p>
+            <p class="product-card__price">5 990 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <img class="product-card__image" src="images/product-2.svg" alt="Товар 2" width="600" height="400" loading="lazy">
+            <picture>
+              <source type="image/avif" srcset="images/products/product-2-400.avif 400w, images/products/product-2-800.avif 800w, images/products/product-2-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <source type="image/webp" srcset="images/products/product-2-400.webp 400w, images/products/product-2-800.webp 800w, images/products/product-2-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <img class="product-card__image" src="images/products/product-2-800.jpg"
+                   srcset="images/products/product-2-400.jpg 400w, images/products/product-2-800.jpg 800w, images/products/product-2-1200.jpg 1200w"
+                   sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                   alt="Умные часы Pulse S с зелёным экраном" width="800" height="533" loading="lazy">
+            </picture>
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Товар 2</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">1500 руб.</p>
+            <h3 class="product-card__title">Умные часы Pulse S</h3>
+            <p class="product-card__description">AMOLED-экран, пульсометр, GPS и уведомления со смартфона.</p>
+            <p class="product-card__price">8 990 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card product-card--discount">
-            <img class="product-card__image" src="images/product-3.svg" alt="Товар 3" width="600" height="400" loading="lazy">
+            <picture>
+              <source type="image/avif" srcset="images/products/product-3-400.avif 400w, images/products/product-3-800.avif 800w, images/products/product-3-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <source type="image/webp" srcset="images/products/product-3-400.webp 400w, images/products/product-3-800.webp 800w, images/products/product-3-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <img class="product-card__image" src="images/products/product-3-800.jpg"
+                   srcset="images/products/product-3-400.jpg 400w, images/products/product-3-800.jpg 800w, images/products/product-3-1200.jpg 1200w"
+                   sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                   alt="Оранжевая портативная колонка Boom Mini" width="800" height="533" loading="lazy">
+            </picture>
             <span class="product-card__badge">Скидка</span>
-            <h3 class="product-card__title">Товар 3</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">2000 руб.</p>
+            <h3 class="product-card__title">Портативная колонка Boom Mini</h3>
+            <p class="product-card__description">Компактная колонка с защитой от воды и мощным басом.</p>
+            <p class="product-card__price">3 490 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <img class="product-card__image" src="images/product-4.svg" alt="Товар 4" width="600" height="400" loading="lazy">
-            <h3 class="product-card__title">Товар 4</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">2500 руб.</p>
+            <picture>
+              <source type="image/avif" srcset="images/products/product-4-400.avif 400w, images/products/product-4-800.avif 800w, images/products/product-4-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <source type="image/webp" srcset="images/products/product-4-400.webp 400w, images/products/product-4-800.webp 800w, images/products/product-4-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <img class="product-card__image" src="images/products/product-4-800.jpg"
+                   srcset="images/products/product-4-400.jpg 400w, images/products/product-4-800.jpg 800w, images/products/product-4-1200.jpg 1200w"
+                   sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                   alt="Тёмный внешний аккумулятор с индикатором заряда" width="800" height="533" loading="lazy">
+            </picture>
+            <h3 class="product-card__title">Внешний аккумулятор PowerCell</h3>
+            <p class="product-card__description">20 000 мА·ч и быстрая зарядка 22,5 Вт.</p>
+            <p class="product-card__price">2 490 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <img class="product-card__image" src="images/product-5.svg" alt="Товар 5" width="600" height="400" loading="lazy">
+            <picture>
+              <source type="image/avif" srcset="images/products/product-5-400.avif 400w, images/products/product-5-800.avif 800w, images/products/product-5-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <source type="image/webp" srcset="images/products/product-5-400.webp 400w, images/products/product-5-800.webp 800w, images/products/product-5-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <img class="product-card__image" src="images/products/product-5-800.jpg"
+                   srcset="images/products/product-5-400.jpg 400w, images/products/product-5-800.jpg 800w, images/products/product-5-1200.jpg 1200w"
+                   sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                   alt="Фиолетовая механическая клавиатура KeyPro" width="800" height="533" loading="lazy">
+            </picture>
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Товар 5</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">3000 руб.</p>
+            <h3 class="product-card__title">Механическая клавиатура KeyPro</h3>
+            <p class="product-card__description">Компактная раскладка 75 % и подсветка клавиш.</p>
+            <p class="product-card__price">6 490 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <img class="product-card__image" src="images/product-6.svg" alt="Товар 6" width="600" height="400" loading="lazy">
-            <h3 class="product-card__title">Товар 6</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">3500 руб.</p>
+            <picture>
+              <source type="image/avif" srcset="images/products/product-6-400.avif 400w, images/products/product-6-800.avif 800w, images/products/product-6-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <source type="image/webp" srcset="images/products/product-6-400.webp 400w, images/products/product-6-800.webp 800w, images/products/product-6-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <img class="product-card__image" src="images/products/product-6-800.jpg"
+                   srcset="images/products/product-6-400.jpg 400w, images/products/product-6-800.jpg 800w, images/products/product-6-1200.jpg 1200w"
+                   sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                   alt="Бирюзовая беспроводная мышь Glide" width="800" height="533" loading="lazy">
+            </picture>
+            <h3 class="product-card__title">Беспроводная мышь Glide</h3>
+            <p class="product-card__description">Тихие кнопки и сенсор 4000 DPI.</p>
+            <p class="product-card__price">1 990 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <img class="product-card__image" src="images/product-7.svg" alt="Товар 7" width="600" height="400" loading="lazy">
-            <h3 class="product-card__title">Товар 7</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">4000 руб.</p>
+            <picture>
+              <source type="image/avif" srcset="images/products/product-7-400.avif 400w, images/products/product-7-800.avif 800w, images/products/product-7-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <source type="image/webp" srcset="images/products/product-7-400.webp 400w, images/products/product-7-800.webp 800w, images/products/product-7-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <img class="product-card__image" src="images/products/product-7-800.jpg"
+                   srcset="images/products/product-7-400.jpg 400w, images/products/product-7-800.jpg 800w, images/products/product-7-1200.jpg 1200w"
+                   sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                   alt="Веб-камера ClearView HD на подставке" width="800" height="533" loading="lazy">
+            </picture>
+            <h3 class="product-card__title">Веб-камера ClearView HD</h3>
+            <p class="product-card__description">Full HD, автофокус и два микрофона.</p>
+            <p class="product-card__price">3 990 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <img class="product-card__image" src="images/product-8.svg" alt="Товар 8" width="600" height="400" loading="lazy">
+            <picture>
+              <source type="image/avif" srcset="images/products/product-8-400.avif 400w, images/products/product-8-800.avif 800w, images/products/product-8-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <source type="image/webp" srcset="images/products/product-8-400.webp 400w, images/products/product-8-800.webp 800w, images/products/product-8-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <img class="product-card__image" src="images/products/product-8-800.jpg"
+                   srcset="images/products/product-8-400.jpg 400w, images/products/product-8-800.jpg 800w, images/products/product-8-1200.jpg 1200w"
+                   sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                   alt="Серый USB-C хаб с семью разъёмами" width="800" height="533" loading="lazy">
+            </picture>
             <span class="product-card__badge product-card__badge--new">Новинка</span>
-            <h3 class="product-card__title">Товар 8</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">4500 руб.</p>
+            <h3 class="product-card__title">USB-C хаб 7 в 1</h3>
+            <p class="product-card__description">HDMI 4K, три USB-A и кардридер.</p>
+            <p class="product-card__price">2 990 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
 
           <article class="product-card">
-            <img class="product-card__image" src="images/product-9.svg" alt="Товар 9" width="600" height="400" loading="lazy">
-            <h3 class="product-card__title">Товар 9</h3>
-            <p class="product-card__description">Краткое описание учебного товара.</p>
-            <p class="product-card__price">5000 руб.</p>
+            <picture>
+              <source type="image/avif" srcset="images/products/product-9-400.avif 400w, images/products/product-9-800.avif 800w, images/products/product-9-1200.avif 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <source type="image/webp" srcset="images/products/product-9-400.webp 400w, images/products/product-9-800.webp 800w, images/products/product-9-1200.webp 1200w" sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw">
+              <img class="product-card__image" src="images/products/product-9-800.jpg"
+                   srcset="images/products/product-9-400.jpg 400w, images/products/product-9-800.jpg 800w, images/products/product-9-1200.jpg 1200w"
+                   sizes="(min-width: 1440px) 400px, (min-width: 1024px) 340px, (min-width: 600px) 50vw, 100vw"
+                   alt="Зелёный фитнес-браслет Fit Band" width="800" height="533" loading="lazy">
+            </picture>
+            <h3 class="product-card__title">Фитнес-браслет Fit Band</h3>
+            <p class="product-card__description">Шаги, сон, пульс и 14 дней без подзарядки.</p>
+            <p class="product-card__price">2 790 руб.</p>
             <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
           </article>
         </div>

@@ -8,7 +8,7 @@
   <meta property="og:image" content="https://gothplug.github.io/kr1_front/images/preview.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Карточка товара учебного интернет-магазина: изображение, описание, характеристики и цена.">
-  <title>Товар 1 — Учебный интернет-магазин</title>
+  <title>Беспроводные наушники AirBeat — Учебный интернет-магазин</title>
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
@@ -46,26 +46,27 @@
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
       <a class="breadcrumbs__link" href="catalog.html">Каталог</a>
-      <span class="breadcrumbs__current">Товар 1</span>
+      <span class="breadcrumbs__current">Беспроводные наушники AirBeat</span>
     </nav>
 
     <article class="product-detail">
       <div class="product-detail__media">
-        <img
-          class="product-detail__image"
-          src="images/product-1.svg"
-          alt="Учебное изображение товара 1"
-          width="600"
-          height="400"
-        >
+        <picture>
+          <source type="image/avif" srcset="images/products/product-1-400.avif 400w, images/products/product-1-800.avif 800w, images/products/product-1-1200.avif 1200w" sizes="(min-width: 1440px) 610px, (min-width: 768px) 50vw, 100vw">
+          <source type="image/webp" srcset="images/products/product-1-400.webp 400w, images/products/product-1-800.webp 800w, images/products/product-1-1200.webp 1200w" sizes="(min-width: 1440px) 610px, (min-width: 768px) 50vw, 100vw">
+          <img class="product-detail__image" src="images/products/product-1-800.jpg"
+               srcset="images/products/product-1-400.jpg 400w, images/products/product-1-800.jpg 800w, images/products/product-1-1200.jpg 1200w"
+               sizes="(min-width: 1440px) 610px, (min-width: 768px) 50vw, 100vw"
+               alt="Синие полноразмерные наушники AirBeat с мягкими амбушюрами" width="800" height="533" fetchpriority="high">
+        </picture>
         <span class="product-card__badge product-card__badge--hit">Хит</span>
       </div>
 
       <div class="product-detail__info">
-        <h1 class="product-detail__title">Товар 1</h1>
+        <h1 class="product-detail__title">Беспроводные наушники AirBeat</h1>
         <p class="product-detail__description">
-          Учебный товар из каталога. Используется как пример для отработки
-          семантической разметки, таблицы характеристик и оформления заявки.
+          Полноразмерные наушники для учёбы, работы и дороги. Активное шумоподавление
+          убирает фоновый шум, а мягкие амбушюры не давят даже после нескольких часов.
         </p>
 
         <ul class="product-detail__meta">
@@ -74,7 +75,7 @@
           <li class="product-detail__meta-item">Оценка покупателей: 4,8 из 5</li>
         </ul>
 
-        <p class="product-detail__price">Цена: 1000 руб.</p>
+        <p class="product-detail__price">Цена: 5 990 руб.</p>
 
         <div class="product-detail__actions">
           <a class="button button--primary product-detail__button" href="order.html">
@@ -101,7 +102,7 @@
         <tbody>
           <tr>
             <td>Категория</td>
-            <td>Учебный товар</td>
+            <td>Аудио</td>
           </tr>
           <tr>
             <td>Артикул</td>
@@ -109,23 +110,23 @@
           </tr>
           <tr>
             <td>Цена</td>
-            <td>1000 руб.</td>
+            <td>5 990 руб.</td>
           </tr>
           <tr>
             <td>Наличие</td>
             <td>В наличии</td>
           </tr>
           <tr>
-            <td>Материал</td>
-            <td>Учебный материал</td>
+            <td>Подключение</td>
+            <td>Bluetooth 5.3, кабель 3,5 мм</td>
           </tr>
           <tr>
-            <td>Габариты</td>
-            <td>200 × 150 × 50 мм</td>
+            <td>Время работы</td>
+            <td>до 40 часов</td>
           </tr>
           <tr>
             <td>Вес</td>
-            <td>0,4 кг</td>
+            <td>250 г</td>
           </tr>
           <tr>
             <td>Гарантия</td>
@@ -139,9 +140,11 @@
       <h2>Комплектация</h2>
 
       <ul class="product-detail__list">
-        <li class="product-detail__list-item">Основной товар — 1 шт.</li>
+        <li class="product-detail__list-item">Наушники — 1 шт.</li>
+        <li class="product-detail__list-item">Чехол для хранения — 1 шт.</li>
+        <li class="product-detail__list-item">Кабель USB-C — 1 шт.</li>
+        <li class="product-detail__list-item">Аудиокабель 3,5 мм — 1 шт.</li>
         <li class="product-detail__list-item">Инструкция — 1 шт.</li>
-        <li class="product-detail__list-item">Упаковка — 1 шт.</li>
       </ul>
     </section>
 

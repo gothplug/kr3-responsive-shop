@@ -327,12 +327,37 @@ a:focus-visible {
    5. Компоненты страницы
    =============================== */
 
+/* Hero — Flexbox: на телефоне текст над картинкой,
+   с 768px responsive.css ставит их рядом */
 .hero {
   max-width: var(--container-width);
   margin: 0 auto var(--space-xl);
   padding: var(--space-lg) var(--space-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
   background-color: var(--color-surface-accent);
   border-radius: var(--radius-lg);
+}
+
+.hero h1 {
+  margin: 0 0 var(--space-sm);
+  font-size: 28px;
+  line-height: 1.2;
+}
+
+.hero__content p {
+  margin: 0 0 var(--space-md);
+}
+
+.hero__media {
+  display: block;
+}
+
+.hero__image {
+  display: block;
+  width: 100%;
+  border-radius: var(--radius-md);
 }
 
 .section {

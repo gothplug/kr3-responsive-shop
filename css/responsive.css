@@ -57,8 +57,22 @@ video {
     padding: var(--space-lg);
   }
 
+  /* Hero: текст и картинка в одну строку, по половине ширины.
+     Картинка меняется на широкий кадр через <picture media="(min-width: 768px)"> */
   .hero {
+    flex-direction: row;
+    align-items: center;
     padding: var(--space-xl) var(--space-lg);
+  }
+
+  .hero__content,
+  .hero__media {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .hero h1 {
+    font-size: 36px;
   }
 
   /* Страница товара: фото и описание рядом */
