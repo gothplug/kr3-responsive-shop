@@ -69,9 +69,21 @@ if (orderDialog) {
   // Получаем первое поле формы, чтобы поставить в него фокус.
   const firstFormField = document.getElementById('order-name');
 
+  // Кнопка, которой открыли окно: после закрытия вернём на неё фокус,
+  // чтобы пользователь клавиатуры не потерял своё место на странице.
+  let lastTrigger = null;
+
+  orderDialog.addEventListener('close', () => {
+    if (lastTrigger) {
+      lastTrigger.focus();
+    }
+  });
+
   // Перебираем все кнопки «Заказать».
   orderButtons.forEach((button) => {
     button.addEventListener('click', () => {
+      lastTrigger = button;
+
       // Получаем название товара из data-атрибута.
       const productName = button.dataset.product;
 

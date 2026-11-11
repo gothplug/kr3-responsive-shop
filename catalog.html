@@ -4,18 +4,21 @@
   <meta charset="UTF-8">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Учебный интернет-магазин">
-  <meta property="og:description" content="Учебный frontend-проект интернет-магазина.">
-  <meta property="og:image" content="https://gothplug.github.io/kr1_front/images/preview.jpg">
+  <meta property="og:description" content="Адаптивный учебный интернет-магазин: Mobile First, responsive images, доступность.">
+  <meta property="og:image" content="https://gothplug.github.io/kr3-responsive-shop/images/og-preview.jpg">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Каталог товаров учебного интернет-магазина.">
   <title>Каталог товаров — Учебный интернет-магазин</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <script>document.documentElement.classList.add("js");</script>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
   <script src="js/main.js" defer></script>
 </head>
 <body>
-  <header>
+  <a class="skip-link" href="#main">Перейти к основному содержимому</a>
+
+  <header id="top">
     <div class="site-header">
       <a class="site-logo" href="index.html">ShopProject</a>
 
@@ -42,10 +45,10 @@
     </div>
   </header>
 
-  <main>
+  <main id="main" tabindex="-1">
     <nav class="breadcrumbs" aria-label="Хлебные крошки">
       <a class="breadcrumbs__link" href="index.html">Главная</a>
-      <span class="breadcrumbs__current">Каталог</span>
+      <span class="breadcrumbs__current" aria-current="page">Каталог</span>
     </nav>
 
     <section class="section">
@@ -141,7 +144,7 @@
             <h3 class="product-card__title">Беспроводные наушники AirBeat</h3>
             <p class="product-card__description">Полноразмерные наушники с шумоподавлением и 40 часами работы.</p>
             <p class="product-card__price">5 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Беспроводные наушники AirBeat»</span></a>
           </article>
 
           <article class="product-card" data-price="8990" data-tags="popular new">
@@ -157,7 +160,7 @@
             <h3 class="product-card__title">Умные часы Pulse S</h3>
             <p class="product-card__description">AMOLED-экран, пульсометр, GPS и уведомления со смартфона.</p>
             <p class="product-card__price">8 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Умные часы Pulse S»</span></a>
           </article>
 
           <article class="product-card product-card--discount" data-price="3490" data-tags="popular">
@@ -173,7 +176,7 @@
             <h3 class="product-card__title">Портативная колонка Boom Mini</h3>
             <p class="product-card__description">Компактная колонка с защитой от воды и мощным басом.</p>
             <p class="product-card__price">3 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Портативная колонка Boom Mini»</span></a>
           </article>
 
           <article class="product-card" data-price="2490" data-tags="">
@@ -188,7 +191,7 @@
             <h3 class="product-card__title">Внешний аккумулятор PowerCell</h3>
             <p class="product-card__description">20 000 мА·ч и быстрая зарядка 22,5 Вт.</p>
             <p class="product-card__price">2 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Внешний аккумулятор PowerCell»</span></a>
           </article>
 
           <article class="product-card" data-price="6490" data-tags="new">
@@ -204,7 +207,7 @@
             <h3 class="product-card__title">Механическая клавиатура KeyPro</h3>
             <p class="product-card__description">Компактная раскладка 75 % и подсветка клавиш.</p>
             <p class="product-card__price">6 490 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Механическая клавиатура KeyPro»</span></a>
           </article>
 
           <article class="product-card" data-price="1990" data-tags="">
@@ -219,7 +222,7 @@
             <h3 class="product-card__title">Беспроводная мышь Glide</h3>
             <p class="product-card__description">Тихие кнопки и сенсор 4000 DPI.</p>
             <p class="product-card__price">1 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Беспроводная мышь Glide»</span></a>
           </article>
 
           <article class="product-card" data-price="3990" data-tags="">
@@ -234,7 +237,7 @@
             <h3 class="product-card__title">Веб-камера ClearView HD</h3>
             <p class="product-card__description">Full HD, автофокус и два микрофона.</p>
             <p class="product-card__price">3 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Веб-камера ClearView HD»</span></a>
           </article>
 
           <article class="product-card" data-price="2990" data-tags="new">
@@ -250,7 +253,7 @@
             <h3 class="product-card__title">USB-C хаб 7 в 1</h3>
             <p class="product-card__description">HDMI 4K, три USB-A и кардридер.</p>
             <p class="product-card__price">2 990 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «USB-C хаб 7 в 1»</span></a>
           </article>
 
           <article class="product-card" data-price="2790" data-tags="">
@@ -265,7 +268,7 @@
             <h3 class="product-card__title">Фитнес-браслет Fit Band</h3>
             <p class="product-card__description">Шаги, сон, пульс и 14 дней без подзарядки.</p>
             <p class="product-card__price">2 790 руб.</p>
-            <a class="button button--primary product-card__button" href="product.html">Подробнее</a>
+            <a class="button button--primary product-card__button" href="product.html">Подробнее<span class="visually-hidden"> о товаре «Фитнес-браслет Fit Band»</span></a>
           </article>
         </div>
 
@@ -284,6 +287,6 @@
     </div>
   </footer>
 
-  <a class="to-top" href="#" aria-label="Наверх">Наверх</a>
+  <a class="to-top" href="#top">Наверх</a>
 </body>
 </html>
