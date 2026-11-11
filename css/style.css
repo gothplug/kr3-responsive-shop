@@ -744,6 +744,18 @@ a:focus-visible {
   margin-top: var(--space-sm);
 }
 
+/* Обёртка таблицы: если таблица шире экрана, прокручивается только она,
+   а не вся страница */
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrapper:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 3px;
+}
+
 .product-table {
   width: 100%;
   border-collapse: collapse;
@@ -769,6 +781,68 @@ a:focus-visible {
 
 .product-table tbody tr:hover {
   background-color: var(--color-surface-accent);
+}
+
+/* --- Мобильный вид таблиц (Mobile First): каждая строка — карточка.
+   Обычная табличная раскладка включается в responsive.css с 600px --- */
+.product-table,
+.product-table caption,
+.product-table tbody,
+.product-table tr,
+.product-table th,
+.product-table td {
+  display: block;
+}
+
+/* Шапка таблицы на телефоне не нужна: подписи берутся из data-label */
+.product-table thead {
+  display: none;
+}
+
+.product-table tr {
+  margin-bottom: var(--space-sm);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.product-table th,
+.product-table td {
+  border: none;
+}
+
+/* Характеристики: название слева, значение справа */
+.product-table--specs tr {
+  display: grid;
+  /* Колонка названий не уже 8.5em — иначе «Подключение» рвётся посередине */
+  grid-template-columns: minmax(8.5em, 2fr) minmax(0, 3fr);
+}
+
+.product-table--specs th,
+.product-table--specs td {
+  padding: var(--space-sm) var(--space-sm) var(--space-sm) var(--space-md);
+}
+
+.product-table--specs th {
+  color: var(--color-muted);
+  font-weight: 400;
+}
+
+/* Сравнение тарифов: название тарифа — заголовок карточки,
+   у остальных ячеек подпись из data-label */
+.product-table--compare th {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.product-table--compare td {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.product-table--compare td::before {
+  content: attr(data-label);
+  color: var(--color-muted);
 }
 
 /* ===============================
@@ -1022,3 +1096,60 @@ a:focus-visible {
 }
 
 /* Адаптивные правила (медиазапросы) вынесены в отдельный файл css/responsive.css */
+
+/* ===============================
+   11. Контакты и подвал
+   =============================== */
+
+/* Карточки контактов: на телефоне друг под другом,
+   с 768px responsive.css выстраивает их в три колонки (Grid) */
+.contacts-list {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--space-md);
+  padding: 0;
+  margin: var(--space-lg) 0 0;
+  list-style: none;
+}
+
+.contacts-list__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  padding: var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+}
+
+.contacts-list__label {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+.contacts-list__value {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.contacts-list__note {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+/* Подвал: на телефоне строки друг под другом, с 768px — в одну строку (Flexbox) */
+.site-footer__inner {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+}
+
+.site-footer__text {
+  margin: 0;
+}
+
+.site-footer__link {
+  align-self: flex-start;
+}

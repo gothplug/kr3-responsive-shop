@@ -89,51 +89,53 @@
     </article>
 
     <section class="section">
-      <h2>Характеристики товара</h2>
+      <h2 id="specs-title">Характеристики товара</h2>
 
-      <table class="product-table">
-        <caption>Основные параметры</caption>
-        <thead>
-          <tr>
-            <th scope="col">Параметр</th>
-            <th scope="col">Значение</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Категория</td>
-            <td>Аудио</td>
-          </tr>
-          <tr>
-            <td>Артикул</td>
-            <td>ТВ-0001</td>
-          </tr>
-          <tr>
-            <td>Цена</td>
-            <td>5 990 руб.</td>
-          </tr>
-          <tr>
-            <td>Наличие</td>
-            <td>В наличии</td>
-          </tr>
-          <tr>
-            <td>Подключение</td>
-            <td>Bluetooth 5.3, кабель 3,5 мм</td>
-          </tr>
-          <tr>
-            <td>Время работы</td>
-            <td>до 40 часов</td>
-          </tr>
-          <tr>
-            <td>Вес</td>
-            <td>250 г</td>
-          </tr>
-          <tr>
-            <td>Гарантия</td>
-            <td>12 месяцев</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper" tabindex="0" role="region" aria-labelledby="specs-title">
+        <table class="product-table product-table--specs" role="table">
+          <caption>Основные параметры</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader">Параметр</th>
+              <th scope="col" role="columnheader">Значение</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th scope="row" role="rowheader">Категория</th>
+              <td role="cell" data-label="Значение">Аудио</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">Артикул</th>
+              <td role="cell" data-label="Значение">ТВ-0001</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">Цена</th>
+              <td role="cell" data-label="Значение">5 990 руб.</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">Наличие</th>
+              <td role="cell" data-label="Значение">В наличии</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">Подключение</th>
+              <td role="cell" data-label="Значение">Bluetooth 5.3, кабель 3,5 мм</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">Время работы</th>
+              <td role="cell" data-label="Значение">до 40 часов</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">Вес</th>
+              <td role="cell" data-label="Значение">250 г</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">Гарантия</th>
+              <td role="cell" data-label="Значение">12 месяцев</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <section class="section">
@@ -149,35 +151,37 @@
     </section>
 
     <section class="section">
-      <h2>Сравнение тарифов доставки</h2>
+      <h2 id="delivery-title">Сравнение тарифов доставки</h2>
 
-      <table class="product-table">
-        <caption>Тарифы доставки</caption>
-        <thead>
-          <tr>
-            <th scope="col">Тариф</th>
-            <th scope="col">Срок</th>
-            <th scope="col">Стоимость</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Самовывоз</td>
-            <td>в день заявки</td>
-            <td>бесплатно</td>
-          </tr>
-          <tr>
-            <td>Курьер по городу</td>
-            <td>1–2 дня</td>
-            <td>300 руб.</td>
-          </tr>
-          <tr>
-            <td>Доставка по региону</td>
-            <td>3–5 дней</td>
-            <td>600 руб.</td>
-          </tr>
-        </tbody>
-      </table>
+      <div class="table-wrapper" tabindex="0" role="region" aria-labelledby="delivery-title">
+        <table class="product-table product-table--compare" role="table">
+          <caption>Тарифы доставки</caption>
+          <thead role="rowgroup">
+            <tr role="row">
+              <th scope="col" role="columnheader">Тариф</th>
+              <th scope="col" role="columnheader">Срок</th>
+              <th scope="col" role="columnheader">Стоимость</th>
+            </tr>
+          </thead>
+          <tbody role="rowgroup">
+            <tr role="row">
+              <th scope="row" role="rowheader">Самовывоз</th>
+              <td role="cell" data-label="Срок">в день заявки</td>
+              <td role="cell" data-label="Стоимость">бесплатно</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">Курьер по городу</th>
+              <td role="cell" data-label="Срок">1–2 дня</td>
+              <td role="cell" data-label="Стоимость">300 руб.</td>
+            </tr>
+            <tr role="row">
+              <th scope="row" role="rowheader">Доставка по региону</th>
+              <td role="cell" data-label="Срок">3–5 дней</td>
+              <td role="cell" data-label="Стоимость">600 руб.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </section>
 
     <aside class="aside-info">
@@ -190,9 +194,12 @@
     </aside>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Учебный проект. Все права защищены.</p>
-    <p>Дисциплина: Фронтенд и бэкенд разработка</p>
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+      <p class="site-footer__text">&copy; 2026 Учебный проект ShopProject. Все права защищены.</p>
+      <p class="site-footer__text">Дисциплина: Фронтенд и бэкенд разработка</p>
+      <a class="site-footer__link" href="contacts.html#feedback">Обратная связь</a>
+    </div>
   </footer>
 
   <a class="to-top" href="#" aria-label="Наверх">Наверх</a>
